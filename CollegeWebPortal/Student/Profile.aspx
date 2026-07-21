@@ -16,7 +16,7 @@
             <div class="content-card p-3">
                 <%-- DetailsView server control showing the student's record --%>
                 <asp:DetailsView ID="dv" runat="server" AutoGenerateRows="false"
-                    CssClass="table table-bordered" GridLines="Horizontal">
+                    CssClass="table table-bordered dv-responsive" GridLines="Horizontal">
                     <Fields>
                         <asp:BoundField DataField="RollNo" HeaderText="Roll No" />
                         <asp:BoundField DataField="FullName" HeaderText="Name" />

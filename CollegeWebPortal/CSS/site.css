@@ -45,9 +45,17 @@ body {
 /* ---------- Layout ---------- */
 .app-sidebar {
     background: var(--college-sidebar);
-    min-height: calc(100vh - 56px);
-    border-right: 1px solid #e5e7eb;
-    box-shadow: 1px 0 4px rgba(0, 0, 0, .03);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Full-height fixed sidebar only on large screens; on mobile it collapses */
+@media (min-width: 992px) {
+    .app-sidebar {
+        min-height: calc(100vh - 56px);
+        border-right: 1px solid #e5e7eb;
+        border-bottom: none;
+        box-shadow: 1px 0 4px rgba(0, 0, 0, .03);
+    }
 }
 
 .sidebar-heading {
@@ -179,3 +187,121 @@ body {
     user-select: none;
     text-decoration: line-through;
 }
+
+/* ============================================================
+   Mobile / responsive tweaks
+   ============================================================ */
+
+/* On desktop, very wide report grids can scroll inside their card */
+@media (min-width: 768px) {
+    .content-card { overflow-x: auto; }
+}
+
+@media (max-width: 991.98px) {
+    /* Tighter spacing and readable text on small screens */
+    body { font-size: .9rem; }
+    .app-content { padding-left: .75rem; padding-right: .75rem; }
+    .page-title { font-size: 1.4rem; }
+
+    /* Dashboard stat cards a touch more compact */
+    .stat-card .stat-value { font-size: 1.6rem; }
+    .stat-card .stat-icon { font-size: 1.8rem; }
+
+    /* Sidebar links get comfortable tap targets */
+    .app-sidebar .list-group-item { padding-top: .65rem; padding-bottom: .65rem; }
+
+    /* Stack action buttons and search bars without overflowing */
+    .d-flex.gap-2 { flex-wrap: wrap; }
+    .d-flex.gap-2 > .form-control { min-width: 0; }
+}
+
+/* ---------- Responsive "stacked card" tables (phones) ----------
+   Report GridViews (they all use .table-striped) turn each row into a
+   labeled card. The data-label values are added by site.js.            */
+@media (max-width: 767.98px) {
+    table.table-striped { min-width: 0; }
+
+    table.table-striped thead,
+    table.table-striped tr.resp-head { display: none; }
+
+    table.table-striped tr {
+        display: block;
+        margin-bottom: .85rem;
+        border: 1px solid #e5e7eb;
+        border-radius: .6rem;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    table.table-striped td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        text-align: right;
+        padding: .55rem .8rem;
+        border: none;
+        border-bottom: 1px solid #f1f5f9;
+        white-space: normal;
+    }
+
+    table.table-striped td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #334155;
+        text-align: left;
+        flex: 0 0 42%;
+    }
+
+    /* Rows without labels (pager / "no records") show normally */
+    table.table-striped td[colspan]::before { content: ""; }
+    table.table-striped td[colspan] { justify-content: center; text-align: center; }
+    table.table-striped tr:last-child td:last-child { border-bottom: none; }
+}
+
+/* ---------- Profile DetailsView (key/value) on phones ---------- */
+@media (max-width: 575.98px) {
+    /* Label above value instead of a cramped two-column table */
+    .dv-responsive,
+    .dv-responsive tbody,
+    .dv-responsive tr,
+    .dv-responsive th,
+    .dv-responsive td {
+        display: block;
+        width: 100%;
+    }
+
+    .dv-responsive tr {
+        border: 1px solid #e5e7eb;
+        border-radius: .5rem;
+        margin-bottom: .6rem;
+        overflow: hidden;
+    }
+
+    .dv-responsive th {
+        background: #f8fafc;
+        font-size: .8rem;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+        color: #64748b;
+        padding: .5rem .8rem;
+        border: none;
+    }
+
+    .dv-responsive td {
+        padding: .45rem .8rem .7rem;
+        border: none;
+        word-break: break-word;
+    }
+}
+
+/* ---------- Login card compact on small phones ---------- */
+@media (max-width: 575.98px) {
+    .login-wrapper { padding: 1rem; }
+    .login-card { max-width: 100%; }
+    .login-card .card-body { padding: 1.5rem !important; }
+    .captcha-box { font-size: 1.15rem; letter-spacing: 4px; padding: .4rem .75rem; }
+    /* Keep captcha box + refresh button on one line comfortably */
+    .login-card .d-flex.gap-2 { flex-wrap: nowrap; }
+}
+

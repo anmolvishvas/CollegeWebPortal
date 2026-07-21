@@ -61,16 +61,23 @@
 
         <div class="container-fluid">
             <div class="row">
-                <!-- ===================== SIDEBAR (role based) ===================== -->
-                <aside class="col-lg-2 col-md-3 app-sidebar p-0">
-                    <div class="sidebar-heading text-uppercase small fw-bold px-3 py-2">
-                        <asp:Label ID="lblSidebarTitle" runat="server" Text="Menu" />
+                <!-- ===================== SIDEBAR (role based, collapsible on mobile) ===================== -->
+                <aside class="col-lg-2 col-12 app-sidebar p-0">
+                    <button class="btn btn-primary w-100 rounded-0 d-lg-none text-start" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#sidebarNav" aria-expanded="false"
+                        aria-controls="sidebarNav">
+                        <i class="bi bi-list"></i> Menu
+                    </button>
+                    <div class="collapse d-lg-block" id="sidebarNav">
+                        <div class="sidebar-heading text-uppercase small fw-bold px-3 py-2">
+                            <asp:Label ID="lblSidebarTitle" runat="server" Text="Menu" />
+                        </div>
+                        <asp:Literal ID="litSidebar" runat="server" />
                     </div>
-                    <asp:Literal ID="litSidebar" runat="server" />
                 </aside>
 
                 <!-- ===================== MAIN CONTENT ===================== -->
-                <main class="col-lg-10 col-md-9 app-content py-3">
+                <main class="col-lg-10 col-12 app-content py-3">
                     <!-- Breadcrumb navigation -->
                     <nav aria-label="breadcrumb">
                         <asp:SiteMapPath ID="Breadcrumb" runat="server" CssClass="breadcrumb-nav"
