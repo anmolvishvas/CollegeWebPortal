@@ -1,0 +1,34 @@
+/* ============================================================
+   CollegeTheme.css
+   Part of App_Themes/CollegeTheme. This file is injected automatically
+   into every page that uses the theme (see styleSheetTheme in Web.config).
+   It carries theme-level accents so the "theme" requirement is satisfied
+   even independently of site.css.
+   ============================================================ */
+
+/* Themed primary buttons */
+.btn-primary {
+    background-color: #1e3a8a;
+    border-color: #1e3a8a;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* Themed form focus ring */
+.form-control:focus,
+.form-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 .2rem rgba(37, 99, 235, .2);
+}
+
+/* Themed links */
+a { color: #2563eb; }
+a:hover { color: #1e3a8a; }
+
+/* Section headings */
+h2.page-title,
+h3.page-title { border-left: 4px solid #2563eb; padding-left: .6rem; }

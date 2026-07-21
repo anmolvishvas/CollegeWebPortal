@@ -1,0 +1,26 @@
+<%--
+  CollegeTheme skin file.
+  Default (SkinID-less) skins give every matching server control sensible
+  Bootstrap 5 styling. Because the theme is applied as a styleSheetTheme, any
+  control that declares its own CssClass will override these defaults.
+
+  Named skins (SkinID="...") are opt-in and used on specific controls.
+--%>
+
+<asp:TextBox runat="server" CssClass="form-control" />
+
+<asp:DropDownList runat="server" CssClass="form-select" />
+
+<asp:Button runat="server" CssClass="btn btn-primary" />
+
+<asp:Label runat="server" CssClass="form-label" SkinID="FieldLabel" />
+
+<asp:GridView runat="server"
+    CssClass="table table-striped table-hover table-bordered align-middle"
+    HeaderStyle-CssClass="table-primary"
+    GridLines="None"
+    AutoGenerateColumns="false" />
+
+<asp:DetailsView runat="server"
+    CssClass="table table-bordered"
+    GridLines="Horizontal" />

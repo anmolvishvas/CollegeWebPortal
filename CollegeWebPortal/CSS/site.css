@@ -1,0 +1,181 @@
+/* ============================================================
+   College Web Portal - main stylesheet
+   Modern, responsive, professional college theme (Bootstrap 5 based)
+   ============================================================ */
+
+:root {
+    --college-primary: #1e3a8a;   /* deep blue */
+    --college-accent:  #2563eb;   /* bright blue */
+    --college-light:   #f5f7fb;
+    --college-sidebar: #ffffff;
+    --college-muted:   #64748b;
+}
+
+body {
+    background-color: var(--college-light);
+    font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+    color: #1f2937;
+    font-size: 0.95rem;
+}
+
+/* ---------- Navbar ---------- */
+.app-navbar {
+    background: linear-gradient(90deg, var(--college-primary), var(--college-accent));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+}
+
+.app-navbar .navbar-brand,
+.app-navbar .nav-link,
+.app-navbar .navbar-nav a {
+    color: #fff !important;
+}
+
+/* Top menu control */
+.app-navbar .navbar-nav a {
+    padding: .35rem .75rem;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: .375rem;
+}
+
+.app-navbar .navbar-nav a:hover {
+    background: rgba(255, 255, 255, .15);
+}
+
+/* ---------- Layout ---------- */
+.app-sidebar {
+    background: var(--college-sidebar);
+    min-height: calc(100vh - 56px);
+    border-right: 1px solid #e5e7eb;
+    box-shadow: 1px 0 4px rgba(0, 0, 0, .03);
+}
+
+.sidebar-heading {
+    color: var(--college-muted);
+    letter-spacing: .5px;
+    border-bottom: 1px solid #eef1f6;
+}
+
+.app-sidebar .list-group-item {
+    border: none;
+    color: #334155;
+    font-weight: 500;
+}
+
+.app-sidebar .list-group-item:hover {
+    background: var(--college-light);
+    color: var(--college-accent);
+}
+
+.app-content {
+    min-height: calc(100vh - 56px);
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb-nav {
+    font-size: .85rem;
+    color: var(--college-muted);
+    margin-bottom: 1rem;
+}
+
+.breadcrumb-nav a {
+    color: var(--college-accent);
+    text-decoration: none;
+}
+
+/* ---------- Cards / dashboard ---------- */
+.stat-card {
+    border: none;
+    border-radius: .75rem;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+    transition: transform .15s ease;
+}
+
+.stat-card:hover { transform: translateY(-3px); }
+
+.stat-card .stat-icon { font-size: 2.2rem; opacity: .85; }
+.stat-card .stat-value { font-size: 2rem; font-weight: 700; }
+.stat-card .stat-label { opacity: .9; }
+
+.bg-grad-blue   { background: linear-gradient(135deg, #2563eb, #1e3a8a); }
+.bg-grad-green  { background: linear-gradient(135deg, #16a34a, #065f46); }
+.bg-grad-orange { background: linear-gradient(135deg, #f59e0b, #b45309); }
+.bg-grad-purple { background: linear-gradient(135deg, #7c3aed, #4c1d95); }
+.bg-grad-red    { background: linear-gradient(135deg, #ef4444, #991b1b); }
+.bg-grad-teal   { background: linear-gradient(135deg, #0d9488, #115e59); }
+
+.content-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: .75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+}
+
+.page-title {
+    color: var(--college-primary);
+    font-weight: 700;
+}
+
+/* ---------- Tables / GridView ---------- */
+.table thead th { background: var(--college-primary); color: #fff; }
+.table-primary th { background-color: var(--college-primary) !important; color: #fff; }
+
+/* GridView pager */
+.gv-pager td { padding-top: .5rem; }
+.gv-pager a, .gv-pager span {
+    display: inline-block;
+    padding: .25rem .6rem;
+    margin: 0 2px;
+    border: 1px solid #cbd5e1;
+    border-radius: .375rem;
+    text-decoration: none;
+    color: var(--college-accent);
+}
+.gv-pager span { background: var(--college-accent); color: #fff; }
+
+/* ---------- Footer ---------- */
+.app-footer {
+    background: #0f172a;
+    color: #cbd5e1;
+    font-size: .85rem;
+}
+
+/* ---------- Validation ---------- */
+.field-error { color: #dc2626; font-size: .8rem; }
+.validation-summary {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    border-radius: .5rem;
+    padding: .75rem 1rem;
+}
+
+/* ---------- Login ---------- */
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb 60%, #3b82f6);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 1rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .25);
+}
+
+.captcha-box {
+    font-family: "Courier New", monospace;
+    font-size: 1.4rem;
+    letter-spacing: 6px;
+    font-weight: 700;
+    background: repeating-linear-gradient(45deg, #e2e8f0, #e2e8f0 8px, #f1f5f9 8px, #f1f5f9 16px);
+    color: #1e293b;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    user-select: none;
+    text-decoration: line-through;
+}

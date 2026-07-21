@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Site navigation map. 'roles' drives security trimming so each role only sees
+  its own menu items (see securityTrimmingEnabled in Web.config).
+-->
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="~/Default.aspx" title="Home" description="Home" roles="*">
+
+    <!-- ===================== ADMIN ===================== -->
+    <siteMapNode url="" title="Admin" description="Admin area" roles="Admin">
+      <siteMapNode url="~/Admin/Dashboard.aspx"        title="Dashboard"    description="Admin dashboard" roles="Admin" />
+      <siteMapNode url="~/Admin/ManageStudents.aspx"   title="Students"     description="Manage students" roles="Admin" />
+      <siteMapNode url="~/Admin/ManageFaculty.aspx"    title="Faculty"      description="Manage faculty" roles="Admin" />
+      <siteMapNode url="~/Admin/ManageDepartments.aspx" title="Departments" description="Manage departments" roles="Admin" />
+      <siteMapNode url="~/Admin/ManageCourses.aspx"    title="Courses"      description="Manage courses" roles="Admin" />
+      <siteMapNode url="~/Admin/ManageSubjects.aspx"   title="Subjects"     description="Manage subjects" roles="Admin" />
+      <siteMapNode url="~/Admin/ManageNotices.aspx"    title="Notices"      description="Manage notices" roles="Admin" />
+      <siteMapNode url="~/Admin/ViewAttendance.aspx"   title="Attendance"   description="View attendance" roles="Admin" />
+      <siteMapNode url="~/Admin/ViewMarks.aspx"        title="Marks"        description="View marks" roles="Admin" />
+    </siteMapNode>
+
+    <!-- ===================== FACULTY ===================== -->
+    <siteMapNode url="" title="Faculty" description="Faculty area" roles="Faculty">
+      <siteMapNode url="~/Faculty/Dashboard.aspx"        title="Dashboard"  description="Faculty dashboard" roles="Faculty" />
+      <siteMapNode url="~/Faculty/ManageAttendance.aspx" title="Attendance" description="Manage attendance" roles="Faculty" />
+      <siteMapNode url="~/Faculty/UploadMarks.aspx"      title="Upload Marks" description="Upload marks" roles="Faculty" />
+      <siteMapNode url="~/Faculty/SearchStudent.aspx"    title="Search"     description="Search student" roles="Faculty" />
+      <siteMapNode url="~/Faculty/ViewNotices.aspx"      title="Notices"    description="View notices" roles="Faculty" />
+    </siteMapNode>
+
+    <!-- ===================== STUDENT ===================== -->
+    <siteMapNode url="" title="Student" description="Student area" roles="Student">
+      <siteMapNode url="~/Student/Dashboard.aspx"      title="Dashboard"  description="Student dashboard" roles="Student" />
+      <siteMapNode url="~/Student/Profile.aspx"        title="Profile"    description="My profile" roles="Student" />
+      <siteMapNode url="~/Student/ViewAttendance.aspx" title="Attendance" description="My attendance" roles="Student" />
+      <siteMapNode url="~/Student/ViewMarks.aspx"      title="Marks"      description="My marks" roles="Student" />
+      <siteMapNode url="~/Student/ViewNotices.aspx"    title="Notices"    description="Notices" roles="Student" />
+      <siteMapNode url="~/Student/FeeStatus.aspx"      title="Fees"       description="Fee status" roles="Student" />
+      <siteMapNode url="~/Student/ChangePassword.aspx" title="Password"   description="Change password" roles="Student" />
+    </siteMapNode>
+
+  </siteMapNode>
+</siteMap>
